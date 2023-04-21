@@ -17,7 +17,7 @@ jobs:
 
     - name: Update README
       run: |
-        sed -i 's/old text/new text/' README.md
+        echo $RANDOM > README.md
         git add README.md
         git commit -m "Update README"
         git push origin main
