@@ -21,16 +21,11 @@ jobs:
 
     - name: Update README 
       run: |
-        echo $RANDOM > README.md
+        echo $RANDOM >> README.md
 
-    #- name: Push
-      #run: |
-        #git add README.md
-        #git commit -m "Update README"
-        #git push origin main
+    - name: Push
+      run: |
+        git add README.md
+        git commit -m "Update README"
+        git push origin main
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: updated-readme
-        path: README.md
