@@ -11,10 +11,13 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        # Set the version of Node.js to use
+        node-version: '16.x'
 
     - name: Update README
       run: |
-        echo $RANDOM > README.md
+        sed -i 's/old text/new text/' README.md
         git add README.md
         git commit -m "Update README"
         git push origin main
