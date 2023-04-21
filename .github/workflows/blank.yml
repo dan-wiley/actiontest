@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         # Set the version of Node.js to use
         node-version: '16.x'
@@ -23,7 +23,7 @@ jobs:
         git push origin main
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: updated-readme
         path: README.md
