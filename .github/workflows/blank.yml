@@ -10,6 +10,8 @@ jobs:
     if: "!contains(github.repository.collaborators, 'github-actions[bot]')"
     runs-on: ubuntu-latest
     steps:
+    - name: Install dependencies
+      run: npm install @octokit/rest
     - name: Add GitHub Actions bot as collaborator
       uses: actions/github-script@v4
       with:
